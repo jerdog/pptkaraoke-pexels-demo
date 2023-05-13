@@ -10,18 +10,29 @@ jobs:
         type: string
     docker:
       - image: cimg/node:<< parameters.node-ver >>-browsers
+    resource_class: large
     steps:
       - checkout
-      - node/install:
-          node-version: << parameters.node-ver >>
+#      - node/install:
+#          node-version: << parameters.node-ver >>
+      - restore_cache:
+          keys:
+            - v1-dep-<< parameters.node-ver >>-{{ checksum "package-lock.json" }}
       - node/install-packages:
           pkg-manager: npm
+          cache-path: ~/project/node_modules
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dep-<< parameters.node-ver >>-{{ checksum "package-lock.json" }}
       - run:
           command: npm run build --if-present
           name: Build app
       - run: 
           command: npm test
           name: Test app
+      - store_test_results:
+          path: test-results
 
 workflows:
   js-tests:
