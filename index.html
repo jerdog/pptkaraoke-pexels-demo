@@ -18,17 +18,27 @@
 			<div class="slides">
 				<section data-markdown>
 					<textarea data-template>
-						# Welcome to Powerpoint Karaoke
-						## VueConf.us 2023 Style!
+						## Welcome to Powerpoint Karaoke
+						#### VueConf.us 2023 Style!
 
 					</textarea>
 
 				</section>
-				<section><img src="https://source.unsplash.com/random/?Cryptography&1""></section>
-				<section><img data-src="https://source.unsplash.com/random/?Cryptography&2""></section>
-				<section><img data-src="https://source.unsplash.com/random/?Karaoke&1""></section>
+
+				<section><img class="deck" src=""></section>
+				<section><img class="deck" src=""></section>
+				<section><img class="deck" src=""></section>
 			</div>
 		</div>
+
+		<script>
+			const getRandomNum = () => Math.floor(Math.random() * 206)
+			const cubes = document.getElementsByClassName('deck');
+			for (let item of cubes) {
+			  const bgImage = `https://source.unsplash.com/collection/466697/${getRandomNum()}`
+			  item.img['data-src'] = bgImage
+			}
+		</script>
 
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
