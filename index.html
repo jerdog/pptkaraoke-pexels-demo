@@ -16,8 +16,26 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+        <section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
 			</div>
 		</div>
 
@@ -25,6 +43,17 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+    <script>
+
+    const u32Array = new Uint32Array(20);
+    window.crypto.getRandomValues(u32Array);
+    const imgs = document.querySelectorAll('section');
+    imgs.forEach((img, idx) => {
+      img.dataset.backgroundImage = `https://source.unsplash.com/random/?cryptography&${u32Array[idx]}`
+    })
+
+
+    </script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
