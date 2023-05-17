@@ -25,25 +25,42 @@
 
 				</section>
 
-				<section><img class="deck" src=""></section>
-				<section><img class="deck" src=""></section>
-				<section><img class="deck" src=""></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+
 			</div>
 		</div>
-
-		<script>
-			const getRandomNum = () => Math.floor(Math.random() * 206)
-			const cubes = document.getElementsByClassName('deck');
-			for (let item of cubes) {
-			  const bgImage = `https://source.unsplash.com/collection/466697/${getRandomNum()}`
-			  item.img['data-src'] = bgImage
-			}
-		</script>
 
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			const u32Array = new Uint32Array(20);
+			window.crypto.getRandomValues(u32Array);
+			const imgs = document.querySelectorAll('section');
+			imgs.forEach((img, idx) => {
+				img.dataset.backgroundImage = `https://source.unsplash.com/random/?cryptography&${u32Array[idx]}`
+			})
+		</script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
