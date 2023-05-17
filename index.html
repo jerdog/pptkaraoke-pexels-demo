@@ -16,7 +16,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-markdown>
+				<section data-markdown data-autoslide="0">
 					<textarea data-template>
 						## Welcome to Powerpoint Karaoke
 						#### VueConf.us 2023 Style!
@@ -25,6 +25,7 @@
 
 				</section>
 
+				<section></section>
 				<section></section>
 				<section></section>
 				<section></section>
@@ -67,6 +68,18 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				controls: false,
+				progress: true,
+				center: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				slideNumber: 'all',
+				hash: true,
+				history: true,
+				loop: true,
+				help: true,
+				autoSlide: 15000,
+
+
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
