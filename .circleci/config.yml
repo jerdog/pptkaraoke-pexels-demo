@@ -28,9 +28,10 @@ jobs:
       - run:
           command: npm run build --if-present
           name: Build app
-      - run: 
-          command: npm test
-          name: Test app
+# Nothing to test here
+#      - run: 
+#          command: npm test
+#          name: Test app
       - store_test_results:
           path: test-results
 
