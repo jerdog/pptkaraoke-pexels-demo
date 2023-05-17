@@ -69,7 +69,7 @@ export class Unsplash {
           // Convert the photo buffer to a Buffer
           const image = Buffer.from(photoBuffer);
            // Create a file path for the photo
-          const filePath = `./images/${query}.jpg`
+          const filePath = `../images/${query}.jpg`
           // Write the photo to the file system
           await fs.promises.writeFile(filePath, image);
           console.log(caption);
