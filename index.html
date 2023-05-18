@@ -54,10 +54,12 @@
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
 			const u32Array = new Uint32Array(20);
+			const imageWidth = 1920;
+			const imageHeight = 1080;
 			window.crypto.getRandomValues(u32Array);
 			const imgs = document.querySelectorAll('section');
 			imgs.forEach((img, idx) => {
-				img.dataset.backgroundImage = `https://source.unsplash.com/random/?funny&${u32Array[idx]}`
+				img.dataset.backgroundImage = `https://source.unsplash.com/random/${imageWidth}x${imageHeight}/?funny-website&sig=${u32Array[idx]}`
 			})
 		</script>
 		<script>
