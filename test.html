@@ -22,6 +22,7 @@
 						#### VueConf.us 2023 Style!
 					</textarea>
 				</section>
+				<section data-background-image="https://images.unsplash.com/photo-1437913135140-944c1ee62782?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;h=1080&amp;ixid=MnwxfDB8MXxyYW5kb218MHx8ZnVubnktd2Vic2l0ZXx8fHx8fDE2ODQ0MjI2NjE&amp;ixlib=rb-4.0.3&amp;q=80&amp;utm_campaign=api-credit&amp;utm_medium=referral&amp;utm_source=unsplash_source&amp;w=1920" data-background-size="contain" data-background-repeat="no-repeat" class="past" style="display: none; top: 350px;" hidden="" aria-hidden="true"></section>
             </div>
 		</div>
 
@@ -35,12 +36,14 @@
             const galleryContainer = document.querySelector('.slides');
             
             function renderGalleryItem(randomNumber) {
-                fetch(`https://source.unsplash.com/collection/${collectionID}/?sig=${randomNumber}`).then((response) => {		// https://unsplash.com/collections/10917035/funny
+                fetch(`https://source.unsplash.com/random/1920x1080/?funny-website&sig=${randomNumber}`).then((response) => {		// https://unsplash.com/collections/10917035/funny
                     const galleryItem = document.createElement('section');
-                    galleryItem.classList.add('gallery-item');
-                    galleryItem.innerHTML = `<img class="gallery-image" src="${response.url}" alt="gallery image"/>`;
-//					galleryItem.dataset.img = response.url;
-                    galleryContainer.appendChild(galleryItem);
+//                    galleryItem.classList.add('gallery-item');
+//                    galleryItem.innerHTML = `<img class="gallery-image" src="${response.url}" alt="gallery image"/>`;
+					galleryItem.dataset.backgroundImage = response.url;
+					galleryItem.dataset.backgroundSize = 'contain';
+					galleryItem.dataset.backgroundRepeat = 'no-repeat';
+					galleryContainer.appendChild(galleryItem);
                 });
             }
 
