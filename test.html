@@ -33,7 +33,7 @@
             const galleryContainer = document.querySelector('.slides');
             
             function renderGalleryItem(randomNumber) {
-                fetch(`https://source.unsplash.com/random/?${randomNumber}`).then((response) => {
+                fetch(`https://source.unsplash.com/collection/10917035/?sig=${randomNumber}`).then((response) => {
                     const galleryItem = document.createElement('section');
 //                    galleryItem.classList.add('gallery-item');
 //                    galleryItem.innerHTML = `<img class="gallery-image" src="${response.url}" alt="gallery image"/>`;
