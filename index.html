@@ -60,6 +60,8 @@
 			const imgs = document.querySelectorAll('section');
 			imgs.forEach((img, idx) => {
 				img.dataset.backgroundImage = `https://source.unsplash.com/random/${imageWidth}x${imageHeight}/?funny-website&sig=${u32Array[idx]}`
+				img.dataset.backgroundSize = 'contain';
+				img.dataset.backgroundRepeat = 'no-repeat';
 			})
 		</script>
 		<script>
