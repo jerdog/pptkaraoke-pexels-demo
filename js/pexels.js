@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-const apikey=PEXELS_API; 
+const apikey=process.env.PEXELS_API;  
 const input=document.querySelector("input");
 const search_btn=document.querySelector(".search_btn");
 const showmore_btn=document.querySelector(".showmore");
