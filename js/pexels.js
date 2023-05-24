@@ -1,4 +1,7 @@
-const apikey="563492ad6f917000010000019b983f3b62fe43daa92e746d4553dd35"; //use the apikey you have generated
+import dotenv from 'dotenv';
+dotenv.config();
+
+const apikey=PEXELS_API; 
 const input=document.querySelector("input");
 const search_btn=document.querySelector(".search_btn");
 const showmore_btn=document.querySelector(".showmore");
