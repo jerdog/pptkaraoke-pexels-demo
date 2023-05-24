@@ -26,6 +26,7 @@
 		</div>
 
         <script>
+            // inspired by https://medium.com/star-gazers/how-to-work-pexels-api-with-javascript-9cda16bbece9
             const container = document.querySelector(".slides");
             let sectionTag = "";
 
@@ -34,14 +35,14 @@
                     sectionTag = `<section>
                             <figure>
                                 <img class="r-stretch" src=${image.src.portrait}>
-                                <figcaption>${image.photographer}</figcaption>
+                                <figcaption>${image.src.publisher}</figcaption>
                             </figure>
                         </section>`;
                     container.innerHTML += sectionTag;
                 })
             }
-
-            fetch("https://api.pexels.com/v1/search?query=funny&orientation=portrait&size=small&per_page=21",{
+// Pexels API
+            fetch("https://api.pexels.com/v1/search?query=funny&orientation=portrait&size=small&per_page=21",{ // pexels API
                 headers: {
                     Authorization: "09PBuomJ0cCNG1iXvMbddRgCTgJGgYnDj2efevlf6f2Xs8ADyIbm4NFF",
                 }
