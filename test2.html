@@ -13,12 +13,16 @@
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
+    <style>
+        div.overlay { position:absolute; bottom:0; right:0; z-index: 1000;}
+    </style>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
                     <h2>Presentation title</h2>
                 </section>
+                <div class="overlay"><img src="img/vueconfus-2023-250px@0.5x.png"></div>
 <!--
 			<section data-background-image="https://images.unsplash.com/photo-1437913135140-944c1ee62782?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;h=1080&amp;ixid=MnwxfDB8MXxyYW5kb218MHx8ZnVubnktd2Vic2l0ZXx8fHx8fDE2ODQ0MjI2NjE&amp;ixlib=rb-4.0.3&amp;q=80&amp;utm_campaign=api-credit&amp;utm_medium=referral&amp;utm_source=unsplash_source&amp;w=1920" data-background-size="contain" data-background-repeat="no-repeat" class="past" style="display: none; top: 350px;" hidden="" aria-hidden="true"></section>
 -->	
@@ -34,15 +38,15 @@
                 images.map(image => {
                     sectionTag = `<section>
                             <figure>
-                                <img class="r-stretch" src=${image.src.portrait}>
-                                <figcaption>${image.src.publisher}</figcaption>
+                                <img class="r-stretch" src=${image.src.landscape}>
+                                <figcaption style="font-size:15px">via Pexels API, Photographer: ${image.photographer}</figcaption>
                             </figure>
                         </section>`;
                     container.innerHTML += sectionTag;
                 })
             }
 // Pexels API
-            fetch("https://api.pexels.com/v1/search?query=funny&orientation=portrait&size=small&per_page=21",{ // pexels API
+            fetch("https://api.pexels.com/v1/search?query=funny&orientation=portrait&size=small&per_page=21&page=5",{ // pexels API
                 headers: {
                     Authorization: "09PBuomJ0cCNG1iXvMbddRgCTgJGgYnDj2efevlf6f2Xs8ADyIbm4NFF",
                 }
