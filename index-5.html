@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/night.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+    <style>
+        div.overlay { position:absolute; bottom:0px; right:0px; z-index: 1000;}
+    </style>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-autoslide="0">
+                    <h2>ES6: The Awkward Teenage Phase of JavaScript</h2>
+                </section>
+                <div class="overlay"><img src="img/vueconfus-2023-250px@0.5x.png"></div>
+            </div>
+		</div>
+
+        <script>
+            // inspired by https://medium.com/star-gazers/how-to-work-pexels-api-with-javascript-9cda16bbece9
+            const container = document.querySelector(".slides");
+            let sectionTag = "";
+
+            function getPhotos(images) {
+                images.map(image => {
+                    sectionTag = `<section>
+                            <figure>
+                                <img src=${image.src.landscape}>
+                                <figcaption style="font-size:15px">via Pexels API, Photographer: ${image.photographer}</figcaption>
+                            </figure>
+                        </section>`;
+                    container.innerHTML += sectionTag;
+                })
+            }
+// Pexels API
+            fetch("https://api.pexels.com/v1/search?query=awkward&orientation=portrait&size=medium&per_page=12",{ // pexels API
+                headers: {
+                    Authorization: "09PBuomJ0cCNG1iXvMbddRgCTgJGgYnDj2efevlf6f2Xs8ADyIbm4NFF",
+                }
+            })
+                .then(resp => {
+                    return resp.json()
+                })
+                .then(data => {
+                    console.log(data.photos);
+                    getPhotos(data.photos);
+                    container.innerHTML += `<section>
+                            <h2 class="r-fit-text">END.</h2>
+                            <h4>*applause*</h4>
+                        </section>`;
+                })
+        </script>
+        <script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				controls: false,
+				progress: true,
+				center: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				slideNumber: 'all',
+				hash: true,
+				history: true,
+				loop: false,
+				help: true,
+				autoSlide: 15000,
+
+
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
