@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
     <style>
-        div.overlay { position:absolute; bottom:0; right:0; z-index: 1000;}
+        div.overlay { position:absolute; bottom:0px; right:0px; z-index: 1000;}
     </style>
 	<body>
 		<div class="reveal">
@@ -33,11 +33,7 @@
 
             function getPhotos(images) {
                 images.map(image => {
-                    sectionTag = `<section>
-                            <figure>
-                                <img class="r-stretch" src=${image.src.landscape}>
-                                <figcaption style="font-size:15px">via Pexels API, Photographer: ${image.photographer}</figcaption>
-                            </figure>
+                    sectionTag = `<section data-background-image="${image.src.landscape}">
                         </section>`;
                     container.innerHTML += sectionTag;
                 })
