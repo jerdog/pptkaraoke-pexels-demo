@@ -33,13 +33,17 @@
 
             function getPhotos(images) {
                 images.map(image => {
-                    sectionTag = `<section data-background-image="${image.src.landscape}">
+                    sectionTag = `<section>
+                            <figure>
+                                <img src=${image.src.landscape}>
+                                <figcaption style="font-size:15px">via Pexels API, Photographer: ${image.photographer}</figcaption>
+                            </figure>
                         </section>`;
                     container.innerHTML += sectionTag;
                 })
             }
 // Pexels API
-            fetch("https://api.pexels.com/v1/search?query=dark%20tech&orientation=portrait&size=small&per_page=12",{ // pexels API
+            fetch("https://api.pexels.com/v1/search?query=dark%20tech&orientation=portrait&size=medium&per_page=12",{ // pexels API
                 headers: {
                     Authorization: "09PBuomJ0cCNG1iXvMbddRgCTgJGgYnDj2efevlf6f2Xs8ADyIbm4NFF",
                 }
