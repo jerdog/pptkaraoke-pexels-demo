@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Powerpoint Karaoke - #1</title>
+		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -13,55 +13,57 @@
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
+    <style>
+        div.overlay { position:absolute; bottom:0; right:0; z-index: 1000;}
+    </style>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section data-autoslide="0">
-					<h2 class="r-frame">Title of presentation</h2>
-				</section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section></section>
-				<section>
-                    <h2 class="r-fit-text">END</h2>
-                    <h2 class="r-fit-text">*applause*</h2>
+                    <h2>Javascript: Java, but for nerds</h2>
                 </section>
-			</div>
+                <div class="overlay"><img src="img/vueconfus-2023-250px@0.5x.png"></div>
+            </div>
 		</div>
 
-		<script src="dist/reveal.js"></script>
+        <script>
+            // inspired by https://medium.com/star-gazers/how-to-work-pexels-api-with-javascript-9cda16bbece9
+            const container = document.querySelector(".slides");
+            let sectionTag = "";
+
+            function getPhotos(images) {
+                images.map(image => {
+                    sectionTag = `<section>
+                            <figure>
+                                <img class="r-stretch" src=${image.src.landscape}>
+                                <figcaption style="font-size:15px">via Pexels API, Photographer: ${image.photographer}</figcaption>
+                            </figure>
+                        </section>`;
+                    container.innerHTML += sectionTag;
+                })
+            }
+// Pexels API
+            fetch("https://api.pexels.com/v1/search?query=dark%20tech&orientation=portrait&size=small&per_page=12",{ // pexels API
+                headers: {
+                    Authorization: "09PBuomJ0cCNG1iXvMbddRgCTgJGgYnDj2efevlf6f2Xs8ADyIbm4NFF",
+                }
+            })
+                .then(resp => {
+                    return resp.json()
+                })
+                .then(data => {
+                    console.log(data.photos);
+                    getPhotos(data.photos);
+                    container.innerHTML += `<section>
+                            <h2 class="r-fit-text">END.</h2>
+                            <h4>*applause*</h4>
+                        </section>`;
+                })
+        </script>
+        <script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			const u32Array = new Uint32Array(20);
-			const imageWidth = 1920;
-			const imageHeight = 1080;
-			window.crypto.getRandomValues(u32Array);
-			const imgs = document.querySelectorAll('section');
-			imgs.forEach((img, idx) => {
-				img.dataset.backgroundImage = `https://source.unsplash.com/random/${imageWidth}x${imageHeight}/?funny-website&sig=${u32Array[idx]}`
-				img.dataset.backgroundSize = 'contain';
-				img.dataset.backgroundRepeat = 'no-repeat';
-			})
-		</script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -75,7 +77,7 @@
 				slideNumber: 'all',
 				hash: true,
 				history: true,
-				loop: true,
+				loop: false,
 				help: true,
 				autoSlide: 15000,
 
