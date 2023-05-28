@@ -51,5 +51,5 @@ npm start
 --- 
 
 <div align="center">
-  [MIT licensed](https://opensource.org/license/mit/) | Copyright © 2023 Jeremy Meiss, https://jmeiss.me
+  <a href="https://opensource.org/license/mit/">MIT licensed</a> | Copyright © 2023 <a href="https://jmeiss.me">Jeremy Meiss</a>.
 </div>
