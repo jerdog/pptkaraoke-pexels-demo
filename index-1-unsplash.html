@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Powerpoint Karaoke</title>
+		<title>Powerpoint Karaoke - #1</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -13,54 +13,36 @@
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
-	<style>
-        div.overlay { position:absolute; bottom:0; right:0; z-index: 500;}
-    </style>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<div class="overlay"><img src="img/vueconfus-2023-250px@0.5x.png"></div>
-				<section data-markdown>
-					<textarea data-template>
-						## Welcome to Powerpoint Karaoke
-						#### <conference> Style!
-					</textarea>
+				<section data-autoslide="0">
+					<h2 class="r-frame">Title of presentation</h2>
 				</section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
+				<section></section>
 				<section>
-					<h2>What is Powerpoint Karaoke?</h2>
-					<p class="fragment">A game where participants present slides they've never seen before</p>
-					<p class="fragment">12 slides advancing every 15s</p>
-				</section>
-				<section data-markdown>
-					<script type="text/template">
-						## How do you play?
-						1. Get a bunch of _random_ slides 
-						2. ~~Rope~~ ~~Trick~~ Incentivize friends into presenting
-						3. Get a group to watch
-						4. Get a bunch of laughs
-						5. Rinse. Repeat. 
-					</script>
-				</section>
-				<section>
-					<h2>Meet the victims</h2>
-					<p class="fragment" style="font-size:25px;">Who #1</p>
-				</section>
-				<section>
-					<h3>Some housekeeping notes</h3>
-						<p class="fragment">Code of Conduct applies</p>
-						<p class="fragment">Rated M for Mature</p>
-						<p class="fragment">No sexual content</p>
-						<p class="fragment">Laughter</p>
-				</section>
-				<section>
-					<h2>Are you ready?</h2>
-				</section>
-				<section>
-					<h2 class="r-frame">Let's f'in <a href="index-1.html" target="_blank">go!</a></h2>
-				</section>
-				<section>
-					<p style="font-size:25px;"><a href="index-1.html" target="_blank">Who #1</a></p>
-				</section>
+                    <h2 class="r-fit-text">END</h2>
+                    <h2 class="r-fit-text">*applause*</h2>
+                </section>
 			</div>
 		</div>
 
@@ -78,7 +60,6 @@
 				img.dataset.backgroundImage = `https://source.unsplash.com/random/${imageWidth}x${imageHeight}/?funny-website&sig=${u32Array[idx]}`
 				img.dataset.backgroundSize = 'contain';
 				img.dataset.backgroundRepeat = 'no-repeat';
-				img.dataset.backgroundOpacity = '0.5';
 			})
 		</script>
 		<script>
@@ -94,8 +75,10 @@
 				slideNumber: 'all',
 				hash: true,
 				history: true,
-				loop: false,
+				loop: true,
 				help: true,
+				autoSlide: 15000,
+
 
 
 				// Learn about plugins: https://revealjs.com/plugins/

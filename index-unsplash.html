@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Powerpoint Karaoke</title>
+		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -14,13 +14,13 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 	<style>
-        div.overlay { position:absolute; bottom:0; right:0; z-index: 500;}
+        div.overlay { position:absolute; bottom:0; right:0; z-index: 1000;}
     </style>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<div class="overlay"><img src="img/vueconfus-2023-250px@0.5x.png"></div>
-				<section data-markdown>
+				<section data-markdown data-autoslide="0">
 					<textarea data-template>
 						## Welcome to Powerpoint Karaoke
 						#### <conference> Style!
@@ -78,7 +78,6 @@
 				img.dataset.backgroundImage = `https://source.unsplash.com/random/${imageWidth}x${imageHeight}/?funny-website&sig=${u32Array[idx]}`
 				img.dataset.backgroundSize = 'contain';
 				img.dataset.backgroundRepeat = 'no-repeat';
-				img.dataset.backgroundOpacity = '0.5';
 			})
 		</script>
 		<script>
@@ -94,7 +93,7 @@
 				slideNumber: 'all',
 				hash: true,
 				history: true,
-				loop: false,
+				loop: true,
 				help: true,
 
 
