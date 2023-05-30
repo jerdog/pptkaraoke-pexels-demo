@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Index-1</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/night.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+    <style>
+        div.overlay { position:absolute; bottom:0px; right:0px; z-index: 1000;}
+    </style>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-autoslide="0">
+                    <h2>Javascript: Java, but for nerds</h2>
+                </section>
+                <div class="overlay"><img src="img/vueconfus-2023-250px@0.5x.png"></div>
+            </div>
+		</div>
+
+        <script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				controls: false,
+				progress: true,
+				center: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				slideNumber: 'all',
+				hash: true,
+				history: true,
+				loop: false,
+				help: true,
+				autoSlide: 15000,
+
+
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
