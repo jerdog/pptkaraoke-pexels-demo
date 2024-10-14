@@ -46,7 +46,7 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-connect": "^5.0.0",
     "gulp-eslint": "^6.0.0",
-    "gulp-header": "^2.0.9",
+    "gulp-header": "^1.8.9",
     "gulp-tap": "^2.0.0",
     "gulp-zip": "^4.2.0",
     "highlight.js": "^11.7.0",
