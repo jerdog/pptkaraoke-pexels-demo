@@ -23,42 +23,42 @@
                     <h2>Javascript: Java, but for nerds</h2>
                 </section>
                 <div class="overlay"><img src="img/vueconfus-2023-250px@0.5x.png"></div>
+<!-- section to iterate over based on number of slides in querystring ?slides=X -->
+                <section id="slide-loop">
+                    <figure>
+                        <img src="https://picsum.photos/1024/768/?random=5">
+                        <figcaption style="font-size:15px">via Lorem Picsum</figcaption>
+                    </figure>
+                </section>
+<!-- end of section to iterate over -->
+                <section id="output"></section>
+				<section>
+                    <h2 class="r-fit-text">END</h2>
+                    <h2 class="r-fit-text">*applause*</h2>
+                </section>
             </div>
 		</div>
 
         <script>
-            // inspired by https://medium.com/star-gazers/how-to-work-pexels-api-with-javascript-9cda16bbece9
-            const container = document.querySelector(".slides");
-            let sectionTag = "";
-
-            function getPhotos(images) {
-                images.map(image => {
-                    sectionTag = `<section>
-                            <figure>
-                                <img src=${image.src.landscape}>
-                                <figcaption style="font-size:15px">via Pexels API, Photographer: ${image.photographer}</figcaption>
-                            </figure>
-                        </section>`;
-                    container.innerHTML += sectionTag;
-                })
+            // Function to get the query string parameter by name
+            function getQueryStringValue(key) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(key);
             }
-// Pexels API
-            fetch("https://api.pexels.com/v1/search?query=Java%20but%20for%20nerds&orientation=portrait&size=medium&per_page=12",{ // pexels API
-                headers: {
-                    Authorization: "09PBuomJ0cCNG1iXvMbddRgCTgJGgYnDj2efevlf6f2Xs8ADyIbm4NFF",
-                }
-            })
-                .then(resp => {
-                    return resp.json()
-                })
-                .then(data => {
-                    console.log(data.photos);
-                    getPhotos(data.photos);
-                    container.innerHTML += `<section>
-                            <h2 class="r-fit-text">END.</h2>
-                            <h4>*applause*</h4>
-                        </section>`;
-                })
+
+            // Get the number from the query string, e.g., ?slides=3
+            const repeatCount = parseInt(getQueryStringValue('slides')) || 1;
+
+            // Select the section to duplicate
+            const sectionToDuplicate = document.getElementById('slide-loop').innerHTML;
+
+            // Target the output area where duplicated content will go
+            const output = document.getElementById('output');
+
+            // Iterate and append the section based on the repeatCount
+            for (let i = 0; i < repeatCount; i++) {
+                output.innerHTML += sectionToDuplicate;
+            }
         </script>
         <script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>

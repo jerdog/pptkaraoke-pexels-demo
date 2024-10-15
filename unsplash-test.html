@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Slideshow with Reveal.js</title>
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css">
+</head>
+<body>
+
+<div class="reveal">
+    <div class="slides" id="slides-container">
+        <!-- Slides will be inserted here dynamically -->
+         <section></section>
+    </div>
+</div>
+
+<script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+<script type="module" src="./index.js"></script> <!-- Your custom JS file -->
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    // Reveal.initialize({
+    //     hash: true,
+    //     controls: false,
+    //     progress: true,
+    //     center: true,
+    //     transition: 'slide', // none/fade/slide/convex/concave/zoom
+    //     slideNumber: 'all',
+    //     hash: true,
+    //     history: true,
+    //     loop: false,
+    //     help: true,
+    //     autoSlide: 15000,
+
+
+
+    //     // Learn about plugins: https://revealjs.com/plugins/
+    //     plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    // });
+</script>
+</body>
+</html>
