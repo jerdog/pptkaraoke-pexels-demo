@@ -1,5 +1,5 @@
 // Import the Unsplash package from node_modules
-import { createApi } from './node_modules/unsplash-js/dist/unsplash-js.esm.js';
+import { createApi } from 'https://cdn.jsdelivr.net/npm/unsplash-js@7.0.19/+esm';
 
 // Access the query string parameters
 const queryParams = new URLSearchParams(window.location.search);
