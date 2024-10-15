@@ -13,7 +13,7 @@ const unsplash = createApi({
 // Initialize Reveal.js
  Reveal.initialize({
         hash: true,
-        controls: false,
+        controls: true,
         progress: true,
         center: true,
         transition: 'slide', // none/fade/slide/convex/concave/zoom
