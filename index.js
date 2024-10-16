@@ -35,11 +35,11 @@ const unsplash = createApi({
 // Function to generate slides dynamically
 function generateSlides() {
     for (let i = 0; i < numberOfSlides; i++) {
-        unsplash.photos.getRandom({ query: 'funny ai photos', orientation: 'landscape' })
+        unsplash.photos.getRandom({ query: 'funny photos', orientation: 'landscape', content_filter: 'low' })
             .then(response => {
                 const photo = response.response; // Response data
                 const slide = document.createElement('section');
-                slide.innerHTML = `<img src="${photo.urls.regular}" alt="${photo.alt_description}" style="width:100%; height:auto;">`;
+                slide.innerHTML = `<figure><img src="${photo.urls.regular}" alt="${photo.alt_description}" style="width:100%; height:auto;"><figcaption style="font-size:15px">via <a href="${photo.urls.regular}" target="_blank">Unsplash</a>, Photographer: ${photo.user.name}</figcaption></figure>`;
                 document.getElementById('autogen-Slides').appendChild(slide);
                 Reveal.sync(); // Sync Reveal.js after dynamically adding content
             })
