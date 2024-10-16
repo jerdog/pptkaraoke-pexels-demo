@@ -23,11 +23,13 @@ const unsplash = createApi({
         loop: false,
         help: true,
         autoSlide: 15000,
+        showNotes: false,
+        viewDistance: 5,
 
 
 
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+        plugins: [ RevealMarkdown, RevealHighlight ]
     });
 
 // Function to generate slides dynamically
@@ -38,7 +40,7 @@ function generateSlides() {
                 const photo = response.response; // Response data
                 const slide = document.createElement('section');
                 slide.innerHTML = `<img src="${photo.urls.regular}" alt="${photo.alt_description}" style="width:100%; height:auto;">`;
-                document.getElementById('slides-container').appendChild(slide);
+                document.getElementById('autogen-Slides').appendChild(slide);
                 Reveal.sync(); // Sync Reveal.js after dynamically adding content
             })
             .catch(error => console.error("Error fetching image:", error));
