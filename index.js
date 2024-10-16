@@ -7,7 +7,7 @@ const numberOfSlides = queryParams.get('slides') || 5; // Default to 5 slides if
 
 // Initialize Unsplash API with your access key
 const unsplash = createApi({
-  accessKey: 'x5St7Ue7bkkgGlGep21VuD3yD2eN1_jT74fVB3Bhq6w', // Replace with your Unsplash access key
+  accessKey: '{{ACCESS_KEY}}', // Replace with your Unsplash access key
 });
 
 // Initialize Reveal.js

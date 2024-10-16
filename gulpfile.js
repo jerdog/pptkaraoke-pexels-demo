@@ -26,6 +26,19 @@ const root = yargs.argv.root || '.'
 const port = yargs.argv.port || 8000
 const host = yargs.argv.host || 'localhost'
 
+// Inject API key on build
+const replace = require('gulp-replace');
+const rename = require('gulp-rename');
+gulp.task('build', function () {
+    const accessKey = process.env.ACCESS_KEY; // Get the environment variable
+  
+    return gulp.src('index.js') // Path to your index.js file
+      .pipe(replace('{{ACCESS_KEY}}', accessKey)) // Replace the placeholder
+      .pipe(rename('index.js')) // Output to the same filename
+      .pipe(gulp.dest('dist')); // Output directory
+  });
+
+
 const banner = `/*!
 * reveal.js ${pkg.version}
 * ${pkg.homepage}
