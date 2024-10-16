@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Overland Park",
+			"country": {
+				"code": "US",
+				"name": "United States"
+			},
+			"subdivision": {
+				"code": "KS",
+				"name": "Kansas"
+			},
+			"timezone": "America/Chicago",
+			"latitude": 38.9507,
+			"longitude": -94.6824,
+			"postalCode": "66212"
+		},
+		"timestamp": 1729043987282
+	}
+}

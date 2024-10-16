@@ -5,6 +5,10 @@ import { createApi } from 'https://cdn.jsdelivr.net/npm/unsplash-js@7.0.19/+esm'
 const queryParams = new URLSearchParams(window.location.search);
 const numberOfSlides = queryParams.get('slides') || 5; // Default to 5 slides if not provided
 
+// Initialize Unsplash API with your access key
+const unsplash = createApi({
+  accessKey: '{{ACCESS_KEY}}', // Replace with your Unsplash access key
+});
 
 // Initialize Reveal.js
  Reveal.initialize({
@@ -31,11 +35,9 @@ const numberOfSlides = queryParams.get('slides') || 5; // Default to 5 slides if
 // Function to generate slides dynamically
 function generateSlides() {
     for (let i = 0; i < numberOfSlides; i++) {
-        // Fetch the random image data from your Netlify function
-        fetch('/.netlify/functions/unsplash')
-            .then(response => response.json())
-            .then(data => {
-                const photo = data; // The data returned by the Unsplash API
+        unsplash.photos.getRandom({ query: 'funny photos', orientation: 'landscape', content_filter: 'low' })
+            .then(response => {
+                const photo = response.response; // Response data
                 const slide = document.createElement('section');
                 slide.innerHTML = `<figure><img src="${photo.urls.regular}" alt="${photo.alt_description}" style="width:100%; height:auto;"><figcaption style="font-size:15px">via <a href="${photo.urls.regular}" target="_blank">Unsplash</a>, Photographer: ${photo.user.name}</figcaption></figure>`;
                 document.getElementById('autogen-Slides').appendChild(slide);

@@ -1,3 +1,10 @@
 [build]
 command = "npm install ; npm run build"
-environment = { NODE_VERSION = "20.5.0"}
+environment = { NODE_VERSION = "18"}
+functions = ".netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[context.production.environment]
+  NODE_VERSION = "18"
