@@ -10,7 +10,7 @@ exports.handler = async function(event, context) {
       throw new Error("Unsplash access key is missing");
     }
 
-    const response = await fetch(`https://api.unsplash.com/photos/random?query=funny+photos&orientation=landscape&content_filter=low&client_id=${ACCESS_KEY}`);
+    const response = await fetch(`https://api.unsplash.com/photos/random?query=football&orientation=landscape&content_filter=low&client_id=${ACCESS_KEY}`);
     
     if (!response.ok) {
       throw new Error(`Error fetching Unsplash data: ${response.statusText}`);

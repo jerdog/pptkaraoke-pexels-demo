@@ -1,7 +1,7 @@
 [build]
 command = "npm install ; npm run build"
 environment = { NODE_VERSION = "18"}
-functions = ".netlify/functions"
+functions = "netlify/functions"
 
 [functions]
   node_bundler = "esbuild"
